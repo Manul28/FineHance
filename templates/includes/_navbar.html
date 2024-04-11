@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar">
+
+	
+	<button
+		class="navbar-toggler custom-toggler"
+		type="button"
+		data-toggle="collapse"
+		data-target="#navbarNav"
+		aria-controls="navbarNav"
+		aria-expanded="false"
+		aria-label="Toggle navigation"
+		style = "background-color:#ffff"
+	>
+		<span class="navbar-toggler-icon custom-toggler-icon" style="color: black;"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navbarNav">
+		<ul class="navbar-nav mr-auto"> <!-- Changed class from ml-auto to mr-auto -->
+			<li class="nav-item">
+				<a class="nav-link" href="/"><h5 class="text-light">Home</h5><span class="sr-only"></span></a>
+			</li>
+			
+			{% if session.logged_in %}
+			
+			<li class="nav-item">
+				<a class="nav-link" href="/logout"><h5 class="text-light">Logout</h5><span class="sr-only"></span></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/addTransactions"><h5 class="text-light">Budget Planning</h5><span class="sr-only"></span></a>
+			</li>
+			{% else %}
+			<li class="nav-item">
+				<a class="nav-link" href="/signup"><h5 class="text-llight">Sign Up</h5></a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link" href="/login"><h5 class="text-light">Login</h5><span class="sr-only"></span></a>
+			</li>
+			{% endif %}
+		</ul>
+		<ul class="navbar-nav">
+		</ul>
+	</div>
+</nav>
